@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router";
 
 const FeaturedCategories = ({ categories, onSelectCategory, selected }) => {
   return (
@@ -105,12 +106,14 @@ const PopulerBook = ({ populerBook }) => {
 
                 {/* ✅ See More Button */}
                 <div className="mt-auto pt-4">
-                  <button
-                    // ✅ Replace with your own logic or route
-                    className="bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-md text-sm font-medium transition w-full"
-                  >
-                    See More
-                  </button>
+                  <Link to={`/popularBook/${book._id}`}>
+                    <button
+                      // ✅ Replace with your own logic or route
+                      className="bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-md text-sm font-medium transition w-full"
+                    >
+                      See More
+                    </button>
+                  </Link>
                 </div>
               </div>
             </motion.div>

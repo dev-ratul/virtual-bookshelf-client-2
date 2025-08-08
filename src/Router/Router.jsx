@@ -11,6 +11,7 @@ import EditBook from "../Pages/Shared/EditBook";
 import Profile from "../Pages/Shared/Profile";
 import PrivateRoute from "../Provider/PrivateRoute";
 import Error404 from "../Pages/Shared/Error404";
+import PopulerBookDetails from "../Pages/Shared/PopulerBookDetails";
 
 export const router = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ export const router = createBrowserRouter([
       {
         path: '/profile',
         element: <PrivateRoute><Profile></Profile></PrivateRoute>
+      },
+      {
+        path: '/popularBook/:id',
+        element: <PopulerBookDetails></PopulerBookDetails>
       }
     ],
   },
