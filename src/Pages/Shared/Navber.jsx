@@ -99,24 +99,23 @@ const Navber = () => {
                 </NavLink>
               </div>
 
+              <div className="hidden lg:block">
+                <ul className="menu menu-horizontal gap-4">{links}</ul>
+              </div>
+
               {/* Desktop Menu */}
               <div className="hidden lg:flex items-center gap-6">
-                <ul className="menu menu-horizontal gap-4">{links}</ul>
+                
                 {user ? (
                   <button
                     onClick={handleLogout}
-                    className="bg-[#b08968] cursor-pointer text-white px-4 py-2 rounded-full hover:bg-[#9c765a] transition"
+                    className="bg-primary cursor-pointer text-white px-4 py-2 rounded-full hover:hover:bg-purple-700 transition"
                   >
                     Sign Out
                   </button>
                 ) : (
                   <>
-                    <NavLink
-                      to="/register"
-                      className="border border-[#b08968] px-4 py-2 rounded-full text-[#6f4e37] hover:bg-[#f1e4d1]"
-                    >
-                      Register
-                    </NavLink>
+                    
                     <NavLink
                       to="/signIn"
                       className="bg-[#6f4e37] text-white px-4 py-2 rounded-full hover:bg-[#5a3d2d]"
@@ -152,12 +151,7 @@ const Navber = () => {
               </button>
             ) : (
               <div className="flex flex-col gap-2">
-                <NavLink
-                  to="/register"
-                  className="w-full border border-[#b08968] px-4 py-2 rounded-full text-[#6f4e37] hover:bg-[#f1e4d1]"
-                >
-                  Register
-                </NavLink>
+                
                 <NavLink
                   to="/signIn"
                   className="w-full bg-[#6f4e37] text-white px-4 py-2 rounded-full hover:bg-[#5a3d2d]"

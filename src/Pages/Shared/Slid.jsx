@@ -51,7 +51,7 @@ const Slider = () => {
               className="relative h-[90vh] w-full bg-cover bg-center flex items-center justify-center"
               style={{ backgroundImage: `url(${slide.img})` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent z-0"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent z-0"></div>
 
               <div className="relative z-10 text-white text-center px-4 sm:px-10 max-w-4xl animate__animated animate__fadeIn">
                 <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold drop-shadow-md mb-6">
@@ -60,11 +60,7 @@ const Slider = () => {
                 <p className="text-base sm:text-xl lg:text-2xl font-medium leading-relaxed mb-8 drop-shadow-sm">
                   {slide.desc}
                 </p>
-                <Link to={slide.link}>
-                  <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-indigo-600 hover:to-purple-600 text-white text-lg font-semibold rounded-full transition-all duration-300 shadow-xl hover:scale-105">
-                    {slide.btnText}
-                  </button>
-                </Link>
+                
               </div>
             </div>
           </div>
