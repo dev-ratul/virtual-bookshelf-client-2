@@ -5,7 +5,7 @@ import Footer from '../Shared/Footer';
 
 const Root = () => {
     return (
-        <div >
+        <div className=''>
             <Navber></Navber>
             <div className='max-w-[90vw] m-auto'>
                 <Outlet></Outlet>

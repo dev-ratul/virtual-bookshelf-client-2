@@ -5,7 +5,7 @@ const ReaderStats = () => {
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
-    fetch("https://virtual-bookshelf-server-three.vercel.app/api/stats")
+    fetch("http://localhost:3000/api/stats")
       .then((res) => res.json())
       .then((data) => setStats(data));
   }, []);
@@ -14,7 +14,7 @@ const ReaderStats = () => {
 
   return (
     <motion.div
-      className="bg-gray-50 py-10 my-10 rounded-4xl"
+      className=" py-10 my-10 rounded-4xl"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}

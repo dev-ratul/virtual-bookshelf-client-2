@@ -8,7 +8,7 @@ TopReviewer = () => {
   const [reviewers, setReviewers] = useState([]);
 
   useEffect(() => {
-    fetch("https://virtual-bookshelf-server-three.vercel.app/api/top-reviewers")
+    fetch("http://localhost:3000/api/top-reviewers")
       .then((res) => res.json())
       .then((data) => setReviewers(data));
   }, []);
@@ -17,7 +17,7 @@ TopReviewer = () => {
 
   return (
     <motion.div
-      className="py-16 bg-gray-50"
+      className="py-10 "
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}

@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import Loading from "../../Loading";
 
 const SpecialOffer = () => {
   const axiosSecure = useAxioxSecure();
@@ -23,8 +24,10 @@ const SpecialOffer = () => {
     },
   });
 
-  if (isLoading)
-    return <p className="text-center text-gray-500 mt-20">Loading offers...</p>;
+  if (isLoading){
+
+      return <Loading></Loading> 
+  }
   if (isError)
     return (
       <p className="text-center text-red-500 mt-20">Failed to load offers</p>
@@ -35,7 +38,7 @@ const SpecialOffer = () => {
     );
 
   return (
-    <section className="min-h-screen py-10 sm:py-16 px-3 sm:px-4 flex flex-col items-center">
+    <section className="min-h-screen pt-10 sm:pt-16 px-3 sm:px-4 flex flex-col items-center">
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}

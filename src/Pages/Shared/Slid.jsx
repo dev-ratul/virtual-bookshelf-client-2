@@ -43,7 +43,7 @@ const Slider = () => {
   ];
 
   return (
-    <div>
+    <div className="mb-10">
       <SlickSlider {...settings}>
         {slides.map((slide, idx) => (
           <div key={idx}>

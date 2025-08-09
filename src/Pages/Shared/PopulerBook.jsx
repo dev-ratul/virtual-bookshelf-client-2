@@ -48,7 +48,7 @@ const PopulerBook = ({ populerBook }) => {
     : populerBook;
 
   return (
-    <section className="bg-white min-h-screen py-16 px-6">
+    <section className=" min-h-screen pt-10 px-6">
       <h1 className="text-4xl font-bold text-[#4b3f2f] tracking-wide text-center">
         Popular Books
       </h1>

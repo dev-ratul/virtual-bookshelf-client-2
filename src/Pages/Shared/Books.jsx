@@ -33,7 +33,7 @@ const handleDelete = (id) => {
   }).then((result) => {
     if (result.isConfirmed) {
       setIsDeleting(true);
-      fetch(`https://virtual-bookshelf-server-three.vercel.app/delete/${id}`, {
+      fetch(`http://localhost:3000/delete/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -109,7 +109,7 @@ const handleDelete = (id) => {
             <Link
               to={`/my-book/${_id}`}
               onClick={() => handleEdit(Book)}
-              className="px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+              className="px-4 py-1 bg-primary text-white rounded hover:bg-blue-600 transition"
             >
               Update
             </Link>
