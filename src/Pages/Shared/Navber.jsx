@@ -1,12 +1,31 @@
 import { NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const Navber = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  const [darkMode, setDarkMode] = useState(() => {
+    // লোকাল স্টোরেজ থেকে থিম নিয়ে আসা
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("darkMode");
+      return saved === "true";
+    }
+    return false;
+  });
+
+  // darkMode state অনুযায়ী html root এ class যোগ/অপসারণ
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("darkMode", darkMode);
+  }, [darkMode]);
 
   const handleLogout = () => {
     logOut()
@@ -71,7 +90,7 @@ const Navber = () => {
   return (
     <Disclosure
       as="nav"
-      className="bg-gray-900 shadow-md sticky top-0 z-50 border-b border-[#EAE4D5]"
+      className="bg-gray-900 shadow-md sticky top-0 z-50 border-b border-[#EAE4D5] dark:bg-gray-800"
     >
       {({ open }) => (
         <>
@@ -99,6 +118,15 @@ const Navber = () => {
 
               {/* Desktop Buttons */}
               <div className="hidden lg:flex items-center gap-4">
+                {/* Dark Mode Toggle Button */}
+                <button
+                  onClick={() => setDarkMode(!darkMode)}
+                  className="mr-4 px-3 py-1 bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded transition"
+                  aria-label="Toggle Dark Mode"
+                >
+                  {darkMode ? "Light Mode" : "Dark Mode"}
+                </button>
+
                 {user ? (
                   <button
                     onClick={handleLogout}
@@ -117,7 +145,16 @@ const Navber = () => {
               </div>
 
               {/* Mobile Menu Button */}
-              <div className="lg:hidden">
+              <div className="lg:hidden flex items-center gap-2">
+                {/* Dark Mode Toggle Mobile */}
+                <button
+                  onClick={() => setDarkMode(!darkMode)}
+                  className="px-3 py-1 bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded transition"
+                  aria-label="Toggle Dark Mode"
+                >
+                  {darkMode ? "Light" : "Dark"}
+                </button>
+
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md text-white hover:text-[#6f4e37] focus:outline-none">
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -136,7 +173,7 @@ const Navber = () => {
               <button
                 onClick={handleLogout}
                 className="w-full bg-primary text-white font-bold px-4 py-2 rounded-full hover:bg-purple-700 transition"
-              > 
+              >
                 Sign Out
               </button>
             ) : (
