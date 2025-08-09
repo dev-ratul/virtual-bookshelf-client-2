@@ -49,7 +49,7 @@ const PopulerBook = ({ populerBook }) => {
 
   return (
     <section className=" min-h-screen pt-10 px-6">
-      <h1 className="text-4xl font-bold text-[#4b3f2f] tracking-wide text-center">
+      <h1 className="text-4xl font-bold text-[#4b3f2f] dark:text-white tracking-wide text-center">
         Popular Books
       </h1>
 
@@ -79,7 +79,7 @@ const PopulerBook = ({ populerBook }) => {
                 scale: 1.03,
                 boxShadow: "0 12px 24px rgba(0,0,0,0.25)",
               }}
-              className="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 flex flex-col"
+              className="bg-gray-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 flex flex-col"
             >
               {/* Image Section */}
               <div className="h-64 w-full overflow-hidden">

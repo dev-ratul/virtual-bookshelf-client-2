@@ -23,10 +23,10 @@ TopReviewer = () => {
       transition={{ duration: 0.6 }}
     >
       <div className="max-w-5xl mx-auto text-center px-4">
-        <h2 className="text-3xl font-bold text-[#4b3f2f] tracking-wide mb-2">
+        <h2 className="text-3xl font-bold text-[#4b3f2f] dark:text-gray-100 tracking-wide mb-2">
           🌟 Top Reviewers
         </h2>
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-600 dark:text-gray-200 mb-8">
           Meet our most active readers who constantly help others with their book reviews!
         </p>
 
@@ -34,7 +34,7 @@ TopReviewer = () => {
           {reviewers.map((user, idx) => (
             <div
               key={idx}
-              className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-all duration-300"
+              className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition-all duration-300"
             >
               <div className="flex flex-col items-center gap-2">
                 <FaCrown className="text-yellow-500 text-3xl" />

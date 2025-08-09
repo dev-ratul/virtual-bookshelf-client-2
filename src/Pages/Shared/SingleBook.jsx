@@ -28,7 +28,7 @@ const SingleBook = ({ singleBook }) => {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
      
-      className="bg-white lg:h-[400px] dark:bg-gray-900 rounded-xl overflow-hidden shadow-xl hover:shadow-indigo-300 transition-all duration-300 flex flex-col"
+      className="bg-gray-100 lg:h-[400px]  rounded-xl overflow-hidden shadow-xl hover:shadow-indigo-300 transition-all duration-300 flex flex-col"
     >
       {/* Image */}
       <div className="h-60 w-full overflow-hidden relative">
@@ -45,10 +45,10 @@ const SingleBook = ({ singleBook }) => {
      
       <div className="flex flex-col justify-between flex-grow p-5 space-y-3">
         <div>
-          <h3 className="text-xl font-bold text-gray-800 dark:text-white">
+          <h3 className="text-xl md:text-2xl font-semibold text-[#4b3f2f] mb-2 truncate">
             {book_title}
           </h3>
-          <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+          <p className="text-sm text-gray-600 dark:text-gray-800 mt-1">
             ✍️ {book_author} | 📄 {total_page} pages
           </p>
 

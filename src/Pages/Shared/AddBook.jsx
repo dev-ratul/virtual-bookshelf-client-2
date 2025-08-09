@@ -67,8 +67,8 @@ const handleFormSubmit = (e) => {
   
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10 my-5  shadow-xl rounded-xl">
-      <h2 className="text-3xl font-bold text-center mb-8 text-primary">
+    <div className="max-w-4xl mx-auto px-7 py-10 my-5 bg-gray-100  shadow-xl rounded-xl">
+      <h2 className="text-3xl text-primary  font-bold text-center mb-8 text-primary">
         📚 Add a New Book
       </h2>
 

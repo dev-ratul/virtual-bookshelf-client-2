@@ -16,67 +16,50 @@ const Navber = () => {
       .catch((error) => console.log("error", error));
   };
 
+  const navLinkClass = ({ isActive }) =>
+    `relative px-3 py-1 font-semibold transition-colors duration-300 
+     ${
+       isActive
+         ? "text-white border-b-2 border-white"
+         : "text-white hover:text-white after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-white hover:after:w-full after:transition-all after:duration-300"
+     }`;
+
   const links = (
     <>
       <li>
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            `book-link ${isActive ? "active-link" : ""}`
-          }
-        >
+        <NavLink to="/" className={navLinkClass}>
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink
-          to="/book-shelf"
-          className={({ isActive }) =>
-            `book-link ${isActive ? "active-link" : ""}`
-          }
-        >
+        <NavLink to="/book-shelf" className={navLinkClass}>
           Bookshelf
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/all-special-offer" className={navLinkClass}>
+          All Special offer
         </NavLink>
       </li>
       {user && (
         <>
           <li>
-            <NavLink
-              to="/add-book"
-              className={({ isActive }) =>
-                `book-link ${isActive ? "active-link" : ""}`
-              }
-            >
+            <NavLink to="/add-book" className={navLinkClass}>
               Add Book
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/my-book"
-              className={({ isActive }) =>
-                `book-link ${isActive ? "active-link" : ""}`
-              }
-            >
+            <NavLink to="/my-book" className={navLinkClass}>
               My Books
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/add-special-offer"
-              className={({ isActive }) =>
-                `book-link ${isActive ? "active-link" : ""}`
-              }
-            >
+            <NavLink to="/add-special-offer" className={navLinkClass}>
               Add Special Offer
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/profile"
-              className={({ isActive }) =>
-                `book-link ${isActive ? "active-link" : ""}`
-              }
-            >
+            <NavLink to="/profile" className={navLinkClass}>
               Profile
             </NavLink>
           </li>
@@ -88,7 +71,7 @@ const Navber = () => {
   return (
     <Disclosure
       as="nav"
-      className="bg-[#EAEFEF] shadow-md sticky top-0 z-50 border-b border-[#EAE4D5]"
+      className="bg-gray-900 shadow-md sticky top-0 z-50 border-b border-[#EAE4D5]"
     >
       {({ open }) => (
         <>
@@ -103,42 +86,39 @@ const Navber = () => {
                 />
                 <NavLink
                   to="/"
-                  className="text-3xl font-bold text-[#4b3f2f] tracking-wide"
+                  className="text-3xl font-bold text-white tracking-wide"
                 >
                   Virtual Bookshelf
                 </NavLink>
               </div>
 
+              {/* Desktop Links */}
               <div className="hidden lg:block">
-                <ul className="menu menu-horizontal gap-4">{links}</ul>
+                <ul className="flex gap-4">{links}</ul>
               </div>
 
-              {/* Desktop Menu */}
-              <div className="hidden lg:flex items-center gap-6">
-                
+              {/* Desktop Buttons */}
+              <div className="hidden lg:flex items-center gap-4">
                 {user ? (
                   <button
                     onClick={handleLogout}
-                    className="bg-primary cursor-pointer text-white px-4 py-2 rounded-full hover:hover:bg-purple-700 transition"
+                    className="bg-primary text-white px-4 font-bold py-2 rounded-full hover:bg-purple-700 transition"
                   >
                     Sign Out
                   </button>
                 ) : (
-                  <>
-                    
-                    <NavLink
-                      to="/signIn"
-                      className="bg-[#6f4e37] text-white px-4 py-2 rounded-full hover:bg-[#5a3d2d]"
-                    >
-                      Sign In
-                    </NavLink>
-                  </>
+                  <NavLink
+                    to="/signIn"
+                    className="bg-primary text-white font-bold px-4 py-2 rounded-full hover:bg-purple-700 transition"
+                  >
+                    Sign In
+                  </NavLink>
                 )}
               </div>
 
-              {/* Mobile Button */}
+              {/* Mobile Menu Button */}
               <div className="lg:hidden">
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md text-gray-700 hover:text-black focus:outline-none">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md text-white hover:text-[#6f4e37] focus:outline-none">
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
@@ -155,60 +135,19 @@ const Navber = () => {
             {user ? (
               <button
                 onClick={handleLogout}
-                className="w-full bg-[#b08968] cursor-pointer text-white px-4 py-2 rounded-full hover:bg-[#9c765a] transition"
-              >
+                className="w-full bg-primary text-white font-bold px-4 py-2 rounded-full hover:bg-purple-700 transition"
+              > 
                 Sign Out
               </button>
             ) : (
-              <div className="flex flex-col gap-2">
-                
-                <NavLink
-                  to="/signIn"
-                  className="w-full bg-[#6f4e37] text-white px-4 py-2 rounded-full hover:bg-[#5a3d2d]"
-                >
-                  Sign In
-                </NavLink>
-              </div>
+              <NavLink
+                to="/signIn"
+                className="w-full bg-primary text-white font-bold px-4 py-2 rounded-full hover:bg-purple-700 transition"
+              >
+                Sign In
+              </NavLink>
             )}
           </Disclosure.Panel>
-
-          {/* Custom CSS */}
-          <style>
-            {`
-              .book-link {
-                position: relative;
-                padding: 0.4rem 0.75rem;
-                color: #4b3f2f;
-                font-weight: 600;
-                transition: color 0.3s ease;
-              }
-
-              .book-link::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 0%;
-                height: 2px;
-                background-color: #6f4e37;
-                transition: width 0.3s ease;
-              }
-
-              .book-link:hover::after {
-                width: 100%;
-              }
-
-              .book-link:hover {
-                color: #6f4e37;
-              }
-
-              .active-link {
-                color: #6f4e37;
-                font-weight: bold;
-                border-bottom: 2px solid #6f4e37;
-              }
-            `}
-          </style>
         </>
       )}
     </Disclosure>

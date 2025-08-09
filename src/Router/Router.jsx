@@ -13,6 +13,7 @@ import PrivateRoute from "../Provider/PrivateRoute";
 import Error404 from "../Pages/Shared/Error404";
 import PopulerBookDetails from "../Pages/Shared/PopulerBookDetails";
 import AddSpecialOffer from "../Pages/Shared/SalesOffer/AddSpecialOffer/AddSpecialOffer";
+import AllSpecialOffer from "../Pages/Shared/AllSpecialOffer/AllSpecialOffer";
 
 export const router = createBrowserRouter([
   {
@@ -40,10 +41,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "book-shelf",
-        element: <BookShelf></BookShelf>,
-        loader: () => {
-          return fetch("http://localhost:3000/addBook");
-        },
+        element: <BookShelf></BookShelf>
       },
       {
         path: "/book-shelf/:id",
@@ -71,6 +69,10 @@ export const router = createBrowserRouter([
       {
         path: '/add-special-offer',
         element: <AddSpecialOffer></AddSpecialOffer>
+      },
+      {
+        path: '/all-special-offer',
+        element: <AllSpecialOffer></AllSpecialOffer>
       }
     ],
   },

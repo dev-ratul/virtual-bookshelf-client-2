@@ -51,7 +51,7 @@ const Slider = () => {
               className="relative h-[90vh] w-full bg-cover bg-center flex items-center justify-center"
               style={{ backgroundImage: `url(${slide.img})` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent z-0"></div>
+              <div className="absolute inset-0 bg-gradient-to-r white:from-black/90 white:via-black/70 dark:from-black/20 dark:via-black/20 to-transparent z-0"></div>
 
               <div className="relative z-10 text-white text-center px-4 sm:px-10 max-w-4xl animate__animated animate__fadeIn">
                 <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold drop-shadow-md mb-6">
