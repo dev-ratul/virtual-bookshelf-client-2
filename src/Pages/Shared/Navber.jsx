@@ -62,6 +62,16 @@ const Navber = () => {
           </li>
           <li>
             <NavLink
+              to="/add-special-offer"
+              className={({ isActive }) =>
+                `book-link ${isActive ? "active-link" : ""}`
+              }
+            >
+              Add Special Offer
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/profile"
               className={({ isActive }) =>
                 `book-link ${isActive ? "active-link" : ""}`

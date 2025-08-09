@@ -49,7 +49,7 @@ const PopulerBook = ({ populerBook }) => {
 
   return (
     <section className="bg-white min-h-screen py-16 px-6">
-      <h1 className="text-4xl font-extrabold text-center text-gray-900 mb-12 tracking-wide">
+      <h1 className="text-4xl font-bold text-[#4b3f2f] tracking-wide text-center">
         Popular Books
       </h1>
 
@@ -79,7 +79,7 @@ const PopulerBook = ({ populerBook }) => {
                 scale: 1.03,
                 boxShadow: "0 12px 24px rgba(0,0,0,0.25)",
               }}
-              className="bg-[#1f2937] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 flex flex-col"
+              className="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 flex flex-col"
             >
               {/* Image Section */}
               <div className="h-64 w-full overflow-hidden">
@@ -94,13 +94,13 @@ const PopulerBook = ({ populerBook }) => {
               {/* Content Section */}
               <div className="flex-1 p-6 text-white flex flex-col justify-between">
                 <h2
-                  className="text-xl md:text-2xl font-semibold text-indigo-400 mb-2 truncate"
+                  className="text-xl md:text-2xl font-semibold text-[#4b3f2f] mb-2 truncate"
                   title={book.book_title}
                 >
                   {book.book_title}
                 </h2>
 
-                <p className="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-4">
+                <p className="text-[#4b3f2f] text-sm leading-relaxed mb-4 line-clamp-4">
                   {book.book_overview}
                 </p>
 

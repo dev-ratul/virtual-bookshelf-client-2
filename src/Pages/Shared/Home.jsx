@@ -5,6 +5,7 @@ import { useLoaderData } from 'react-router';
 import PopulerBook from './PopulerBook';
 import ReaderStats from './ReaderStats';
 import TopReviewer from './TopReviewer';
+import SpecialOffer from './SalesOffer/SpecialOffer/SpecialOffer';
 
 
 const Home = () => {
@@ -13,8 +14,9 @@ const Home = () => {
         <div>
             <Slid></Slid>
             <PopulerBook populerBook={populerBook}></PopulerBook>
-            <ReaderStats></ReaderStats>
+            <SpecialOffer></SpecialOffer>
             <TopReviewer></TopReviewer>
+            <ReaderStats></ReaderStats>
         </div>
     );
 };

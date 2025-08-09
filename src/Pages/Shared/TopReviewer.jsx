@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaCrown } from "react-icons/fa";
 
-const TopReviewer = () => {
+const 
+TopReviewer = () => {
   const [reviewers, setReviewers] = useState([]);
 
   useEffect(() => {
@@ -22,7 +23,7 @@ const TopReviewer = () => {
       transition={{ duration: 0.6 }}
     >
       <div className="max-w-5xl mx-auto text-center px-4">
-        <h2 className="text-3xl font-bold text-indigo-600 mb-2">
+        <h2 className="text-3xl font-bold text-[#4b3f2f] tracking-wide mb-2">
           🌟 Top Reviewers
         </h2>
         <p className="text-gray-600 mb-8">

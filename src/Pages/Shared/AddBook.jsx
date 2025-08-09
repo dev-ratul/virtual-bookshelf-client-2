@@ -67,8 +67,8 @@ const handleFormSubmit = (e) => {
   
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10 my-5 bg-gradient-to-b from-blue-50 to-purple-100 shadow-xl rounded-xl">
-      <h2 className="text-3xl font-bold text-center mb-8 text-indigo-800">
+    <div className="max-w-4xl mx-auto px-4 py-10 my-5  shadow-xl rounded-xl">
+      <h2 className="text-3xl font-bold text-center mb-8 text-primary">
         📚 Add a New Book
       </h2>
 
@@ -226,7 +226,7 @@ const handleFormSubmit = (e) => {
         <div className="md:col-span-2 flex justify-center">
           <button
             type="submit"
-            className="bg-indigo-600 cursor-pointer hover:bg-indigo-700 text-white px-8 py-3 rounded-full font-semibold text-lg shadow-md transition"
+            className="bg-primary cursor-pointer hover:bg-purple-700 text-white px-8 py-3 rounded-full font-semibold text-lg shadow-md transition"
           >
             ➕ Add Book
           </button>
