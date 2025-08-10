@@ -33,7 +33,7 @@ const handleDelete = (id) => {
   }).then((result) => {
     if (result.isConfirmed) {
       setIsDeleting(true);
-      fetch(`http://localhost:3000/delete/${id}`, {
+      fetch(`https://virtual-bookshelf-server-three.vercel.app/delete/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

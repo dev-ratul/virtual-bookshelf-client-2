@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
-        loader: ()=> fetch(`http://localhost:3000/popularBook`)
+        loader: ()=> fetch(`https://virtual-bookshelf-server-three.vercel.app/popularBook`)
       },
       {
         path: "/register",
@@ -46,7 +46,7 @@ export const router = createBrowserRouter([
       {
         path: "/book-shelf/:id",
         element: <PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:3000/addBook/${params.id}`)
+        loader: ({ params }) => fetch(`https://virtual-bookshelf-server-three.vercel.app/addBook/${params.id}`)
 
       },
       {
@@ -56,7 +56,7 @@ export const router = createBrowserRouter([
       {
         path: '/my-book/:id',
         element: <PrivateRoute><EditBook></EditBook></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:3000/editBook/${params.id}`)
+        loader: ({params})=> fetch(`https://virtual-bookshelf-server-three.vercel.app/editBook/${params.id}`)
       },
       {
         path: '/profile',

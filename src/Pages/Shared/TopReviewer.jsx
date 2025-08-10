@@ -8,7 +8,7 @@ TopReviewer = () => {
   const [reviewers, setReviewers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/top-reviewers")
+    fetch("https://virtual-bookshelf-server-three.vercel.app/api/top-reviewers")
       .then((res) => res.json())
       .then((data) => setReviewers(data));
   }, []);

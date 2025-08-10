@@ -11,7 +11,7 @@ const PopulerBookDetails = () => {
   const { data: book = {}, isLoading, isError } = useQuery({
     queryKey: ["popularBook", id],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:3000/popularBook/${id}`);
+      const res = await axios.get(`https://virtual-bookshelf-server-three.vercel.app/popularBook/${id}`);
       return res.data;
     },
   });

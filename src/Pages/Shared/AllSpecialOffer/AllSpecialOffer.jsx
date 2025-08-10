@@ -1,6 +1,7 @@
 import React from "react";
 import useAxioxSecure from "../../../hook/UseAxioxSecure";
 import { useQuery } from "@tanstack/react-query";
+import Loading from "../Loading";
 
 const AllSpecialOffer = () => {
   const axiosSecure = useAxioxSecure();
@@ -14,7 +15,7 @@ const AllSpecialOffer = () => {
   });
 
   if (isLoading) {
-    return <p className="text-center py-10 text-lg font-semibold">Loading...</p>;
+    return <Loading/>
   }
 
   return (
