@@ -23,10 +23,10 @@ TopReviewer = () => {
       transition={{ duration: 0.6 }}
     >
       <div className="max-w-5xl mx-auto text-center px-4">
-        <h2 className="text-3xl font-bold text-[#4b3f2f] dark:text-gray-100 tracking-wide mb-2">
+        <h2 className="text-3xl font-bold  tracking-wide mb-2">
           🌟 Top Reviewers
         </h2>
-        <p className="text-gray-600 dark:text-gray-200 mb-8">
+        <p className=" mb-8">
           Meet our most active readers who constantly help others with their book reviews!
         </p>
 

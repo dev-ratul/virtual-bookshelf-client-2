@@ -1,4 +1,16 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+/* 
+@tailwind base;
+@tailwind components;
+@tailwind utilities; */
 
+/* Default Light/Dark background for the whole app */
+html {
+  @apply bg-white text-black;
+}
+
+html.dark {
+  @apply bg-gray-800 text-white;
+}

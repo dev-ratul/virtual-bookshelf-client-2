@@ -43,7 +43,7 @@ const SpecialOffer = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-4xl font-bold text-[#4b3f2f] dark:text-gray-100 tracking-wide text-center    mb-8 sm:mb-12 drop-shadow-lg "
+        className="text-4xl font-bold  tracking-wide text-center    mb-8 sm:mb-12 drop-shadow-lg "
       >
         ✨ Special Offers
       </motion.h1>
